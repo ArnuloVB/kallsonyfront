@@ -6,14 +6,14 @@
 name: deploy
 
 env:
-  AZURE_CONTAINER_REGISTRY: ${{ secrets.AZURE_CONTAINER_REGISTRY }} # set this to the name of your container registry
+  AZURE_CONTAINER_REGISTRY: kallsonyacr98815   # set this to the name of your container registry
   PROJECT_NAME: kallsonyfront_app              # set this to your project's name
-  RESOURCE_GROUP: ${{ secrets.RESOURCE_GROUP }}          # set this to the resource group containing your AKS cluster
-  CLUSTER_NAME: ${{ secrets.CLUSTER_NAME }}              # set this to the name of your AKS cluster
-  REGISTRY_URL: MY_REGISTRY_URL              # set this to the URL of your registry
+  RESOURCE_GROUP: kallsony-98815               # set this to the resource group containing your AKS cluster
+  CLUSTER_NAME: kallsonyk8s98815    # set this to the name of your AKS cluster
+  REGISTRY_URL: kallsonyacr98815.azurecr.io/                # set this to the URL of your registry
   # If you bake using helm:
-  CHART_PATH: MY_HELM_FILE                   # set this to the path to your helm file
-  CHART_OVERRIDE_PATH: MY_OVERRIDE_FILES     # set this to an array of override file paths
+  #CHART_PATH: MY_HELM_FILE                     # set this to the path to your helm file
+  #CHART_OVERRIDE_PATH: MY_OVERRIDE_FILES       # set this to an array of override file paths
 
 on: [push]
 
@@ -48,10 +48,10 @@ jobs:
       uses: azure/k8s-bake@773b6144a3732e3bf4c78b146a0bb9617b2e016b
       with:
         renderEngine: 'helm'
-        helmChart: ${{ env.CHART_PATH }}
-        overrideFiles: ${{ env.CHART_OVERRIDE_PATH }}
+        #helmChart: ${{ env.CHART_PATH }}
+        #overrideFiles: ${{ env.CHART_OVERRIDE_PATH }}
         overrides: |     
-          replicas:2
+          replicas:1
         helm-version: 'latest' 
       id: bake
 
