@@ -6,10 +6,10 @@
 name: Build and deploy to Azure Kubernetes Service
 
 env:
-  AZURE_CONTAINER_REGISTRY: MY_REGISTRY_NAME # set this to the name of your container registry
-  PROJECT_NAME: MY_PROJECT_NAME              # set this to your project's name
-  RESOURCE_GROUP: MY_RESOURCE_GROUP          # set this to the resource group containing your AKS cluster
-  CLUSTER_NAME: MY_CLUSTER_NAME              # set this to the name of your AKS cluster
+  AZURE_CONTAINER_REGISTRY: ${{ secrets.AZURE_CONTAINER_REGISTRY }} # set this to the name of your container registry
+  PROJECT_NAME: kallsonyfront_app              # set this to your project's name
+  RESOURCE_GROUP: ${{ secrets.RESOURCE_GROUP }}          # set this to the resource group containing your AKS cluster
+  CLUSTER_NAME: ${{ secrets.CLUSTER_NAME }}              # set this to the name of your AKS cluster
   REGISTRY_URL: MY_REGISTRY_URL              # set this to the URL of your registry
   # If you bake using helm:
   CHART_PATH: MY_HELM_FILE                   # set this to the path to your helm file
