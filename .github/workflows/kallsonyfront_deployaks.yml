@@ -9,8 +9,8 @@ env:
   AZURE_CONTAINER_REGISTRY: kallsonyacr98815   # set this to the name of your container registry
   PROJECT_NAME: kallsonyfront_app              # set this to your project's name
   RESOURCE_GROUP: kallsony-98815               # set this to the resource group containing your AKS cluster
-  CLUSTER_NAME: kallsonyk8s98815    # set this to the name of your AKS cluster
-  REGISTRY_URL: kallsonyacr98815.azurecr.io/                # set this to the URL of your registry
+  CLUSTER_NAME: kallsonyk8s98815               # set this to the name of your AKS cluster
+  REGISTRY_URL: kallsonyacr98815.azurecr.io    # set this to the URL of your registry
   # If you bake using helm:
   CHART_PATH: MY_HELM_FILE                     # set this to the path to your helm file
   CHART_OVERRIDE_PATH: MY_OVERRIDE_FILES       # set this to an array of override file paths
