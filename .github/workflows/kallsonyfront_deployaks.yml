@@ -3,7 +3,7 @@
 # condiciones de servicio, políticas de privacidad y documentación de soporte
 # documentación.
 
-name: Build and deploy to Azure Kubernetes Service
+name: deploy
 
 env:
   AZURE_CONTAINER_REGISTRY: ${{ secrets.AZURE_CONTAINER_REGISTRY }} # set this to the name of your container registry
@@ -21,7 +21,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@main
 
     - name: Azure Login
       uses: azure/login@89d153571fe9a34ed70fcf9f1d95ab8debea7a73
